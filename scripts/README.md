@@ -1,0 +1,1 @@
+all details to run scripts with rdebug
