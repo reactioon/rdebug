@@ -5,7 +5,7 @@ The main goal of this project is a solution to watch apps execution inside of Re
 
 ## Why build it ?
 
-At Reactioon we have multiples softwares doing specific tasks in each scenario. Most of softwares run in multiples machines, and these machines has multiples providers located in multiples regions. Manager the whole thing sometimes can be a lot difficult, and open margin to problems (connectivity, unexpected running processes, high usage (disk/cpu) and others). We want enhance the quality of our tools, so we search for alternatives to prevent failure, enhance performance and watch whats happening on whole context of reactioon. The solution I like is `NewRelic`, but NewRelic can track somethings and not the code it's self when i'm writing. So, to enhance the quality of our tools we choose create an Watcher Layer called `RDEBUG`.
+At Reactioon we have multiples softwares doing specific tasks in each scenario. Most of softwares run in multiples machines, and these machines has multiples providers located in multiples regions. Manager the whole thing sometimes can be a lot difficult, and open margin to problems (connectivity, unexpected running processes, high usage (disk/cpu) and others). We want enhance the quality of our tools, so we search for alternatives to prevent failure, enhance performance and watch whats happening on whole context of reactioon. The solution I like is `NewRelic`, but NewRelic cost is too high. So, to enhance the quality with low cost in long term we choose create an Watcher Layer called `RDEBUG`.
 
 ## How it works ?
 
