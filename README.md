@@ -1,7 +1,7 @@
 # RDEBUG
-RDEBUG is a Monitor Layer (WML) that aim to be lightweight, fast and distributable.
+RDEBUG is a Watcher Layer (WL) that aim to be lightweight, fast and distributable.
 
-The main goal of this project is a solution to watch apps execution inside of Reactioon services/tools. But rdebug is available to everyone that wants track apps execution.
+The main goal of this project is a solution to watch apps execution inside of Reactioon services/tools. But rdebug is available to everyone that wants track apps execution on their own project.
 
 ## Why build it ?
 
@@ -27,7 +27,7 @@ Our focus is not create an high technical solution to debug, but an watcher laye
 
 ## Concept
 
-`RDEBUG` has the watcher concept. So, the whole structure of the RDEBUG is based in an specific context with an  typical flow of data for development like `debug`, `logs`, `tests`, `queries`, `trace`. The context can be the name of app, software, process or anything.
+`RDEBUG` has the watcher concept. So, the whole structure of the RDEBUG is based in an specific context with an  typical flow of data for watch like `debug`, `logs`, `tests`, `queries`, `trace`. The context can be the name of app, software, process or anything.
 
 First we have an `Context`, inside of an context we have an `Flow` ( debug | logs | tests | queries | trace ) and inside of an flow we have `Directions` (start | end).
 
@@ -133,13 +133,13 @@ Scope:
 }
 ```
 
-Command call (rdebug-bin):
+**Command call (rdebug-bin):**
 
 ```sh
 ./rdebug -cmd -flow=debug -context=debug -value=10 -app=test -filename=debug.go -line=11 -host=192.168.1.202 -port=8765
 ```
 
-Library call (rdebug-go-library):
+**Library call (rdebug-go-library):**
 
 ```go
 rdebug.Debug("app", "Hello world!")
@@ -164,12 +164,12 @@ Scope:
 }
 ```
 
-Command call (rdebug-bin):
+**Command call (rdebug-bin):**
 ```sh
 ./rdebug -cmd -flow=log -context=debug -topic="testing logs..." -value="log info" -app=test -filename=debug.go -line=21 -host=192.168.1.202 -port=8765
 ```
 
-Library call (rdebug-go-library):
+**Library call (rdebug-go-library):**
 
 ```go
 rdebug.Debug("rdebug", "Updating value of 'abc'...", "def")
@@ -195,12 +195,12 @@ Scope:
 }
 ```
 
-Command call (rdebug-bin):
+**Command call (rdebug-bin):**
 ```sh
 ./rdebug -cmd -flow=query -context=debug -name="Query A" -value="SELECT * FROM table" -valuet="SQL" -app=test -filename=debug.go -line=21 -elapsed=2min -host=192.168.1.202 -port=8765
 ```
 
-Library call (rdebug-go-library):
+**Library call (rdebug-go-library):**
 
 ```go
 rdebug.Query("SQL","get-users").Start()
@@ -228,12 +228,12 @@ Scope:
 }
 ```
 
-Command call (rdebug-bin):
+**Command call (rdebug-bin):**
 ```sh
-./rdebug -cmd -flow=trace -context=debug -name="Tracing execution" -app=test -filename=debug.go -line=21 -filenameend=debug2.go -lineend=32 -elapsed=1min -host=192.168.1.202 -port=8765
+./rdebug -cmd -flow=trace -context=debug -name="Tracing execution" -app=test -filename=debug.go -line=21 -filenameend=debug2.go -lineend=32 -elapsed=1 -host=192.168.1.202 -port=8765
 ```
 
-Library call (rdebug-go-library):
+**Library call (rdebug-go-library):**
 ```go
 rdebug.Trace("TraceName").Start()
 rdebug.Trace("TraceName").End(context)
@@ -243,7 +243,7 @@ rdebug.Trace("TraceName").End(context)
 
 Execute integrity tests when the app is running to watch if everything is working fine.
 
-Scope:
+**Scope:**
 
 ```json
 {
@@ -263,12 +263,12 @@ Scope:
 }
 ```
 
-Command call (rdebug-bin):
+**Command call (rdebug-bin):**
 ```
 ./rdebug -cmd -flow=test -context=debug -name="Test data" -expected="10" -received="20" -app=test -filename=debug.go -line=21 -host=192.168.1.202 -port=8765
 ```
 
-Library call (rdebug-go-library):
+**Library call (rdebug-go-library):**
 ```go
 rdebug.Test("app", "test-name", "10", "10", "{more_info:true}")
 ```
@@ -293,13 +293,13 @@ RDEBUG works fine on linux, on future we will do more tests in other environment
 
 ## Use cases
 
-* Debbuger  
+* **Debbuger**  
 rdebug can be used to enhance the development of any software.
 
-* Network monitor  
+* **Network monitor**  
 rdebug can be used as an monitor to your network. Example: You can Log the usage of cpu, memory.
 
-* Service stats  
+* **Service stats**  
 rdebug can be used to get stats of an service in your machine, like http/mysql/samba.
 
 ## License
@@ -316,7 +316,7 @@ The current version of RDEBUG is open and free to test, in the future newest ver
 
 ## Considerations
 
-RDEBUG is in development but the Release Candidate version can be used in development/production, actually the public version is ready to use. If you are looking to enhance the quality of your solutions, RDEBUG can be useful to live track important things. 
+RDEBUG is in development but the Release Candidate version can be used in development/production, actually the public version is ready to use. If you are looking to enhance the quality of your solutions, RDEBUG can be useful to track important things. 
 
 <br>
 
