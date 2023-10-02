@@ -19,7 +19,7 @@ wDebugPort="8765" # rdebug host port
 # Basic vars
 wFlow="log"
 wContext="usage"
-wApp="script"
+wApp="script-stats-usage"
 wFile="192.168.1.202"
 
 # Devices to check disk space
